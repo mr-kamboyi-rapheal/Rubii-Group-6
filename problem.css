@@ -1,0 +1,129 @@
+/* =====================================================================
+   PROBLEM SECTION
+   Owner  : Silungwe Lanzi (2511587)
+   Jira   : QRA-6   Branch: QRA-6-problem-section
+   Notes  : Self-contained. Uses the shared design tokens from base.css
+            (Nathan Nansenga) when they exist, with fallbacks so the
+            section still looks right before base.css is merged.
+   ===================================================================== */
+
+.problem {
+  --ps-ink:    var(--ink, #0B1B3F);
+  --ps-muted:  var(--muted, #5B6785);
+  --ps-line:   var(--line, #E3E8F4);
+  --ps-card:   var(--surface, #FFFFFF);
+  --ps-red:    var(--red-500, #EF4444);
+  --ps-red-bg: var(--red-100, #FEE2E2);
+  --ps-radius: var(--radius, 18px);
+
+  padding: 96px 0;
+  background: var(--bg, #F6F8FD);
+  color: var(--ps-ink);
+  font-family: var(--font-body, "Inter", system-ui, sans-serif);
+  line-height: 1.65;
+}
+.problem *, .problem *::before, .problem *::after { box-sizing: border-box; }
+
+.problem .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Heading ---------- */
+.problem .section-head { max-width: 720px; margin: 0 auto 56px; text-align: center; }
+.problem h2,
+.problem h3 {
+  font-family: var(--font-head, "Plus Jakarta Sans", system-ui, sans-serif);
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  margin: 0 0 .5em;
+}
+.problem h2 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 800; }
+.problem h3 { font-size: 1.2rem; font-weight: 700; }
+.problem p  { color: var(--ps-muted); margin: 0 0 1em; }
+.problem .section-head p { font-size: 1.1rem; }
+
+.problem .eyebrow {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: .35em .9em;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ps-red);
+  background: var(--ps-red-bg);
+}
+
+/* ---------- Problem cards ---------- */
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.problem-card {
+  background: var(--ps-card);
+  border: 1px solid var(--ps-line);
+  border-radius: var(--ps-radius);
+  padding: 28px 24px;
+  box-shadow: 0 2px 8px rgba(11, 27, 63, .06);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.problem-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(11, 27, 63, .08); }
+.problem-card p { margin: 0; font-size: .95rem; }
+
+.problem .icon-badge {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  margin-bottom: 1.1rem;
+  border-radius: 14px;
+  color: var(--ps-red);
+  background: var(--ps-red-bg);
+}
+.problem .icon-badge svg {
+  width: 26px; height: 26px;
+  fill: none; stroke: currentColor;
+  stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* ---------- Who is affected + why it matters ---------- */
+.affected {
+  background: var(--ps-card);
+  border: 1px solid var(--ps-line);
+  border-left: 5px solid var(--ps-red);
+  border-radius: var(--ps-radius);
+  padding: 32px 36px;
+}
+.affected-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+.affected-list li { position: relative; padding-left: 1.4rem; color: var(--ps-muted); }
+.affected-list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: .6em;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--ps-red);
+}
+.affected-list strong { display: block; color: var(--ps-ink); }
+.why { margin: 0; padding-top: 1.25rem; border-top: 1px dashed var(--ps-line); }
+.why strong { color: var(--ps-ink); }
+
+/* ---------- Responsive (own section only) ---------- */
+@media (max-width: 1024px) {
+  .problem-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .problem { padding: 68px 0; }
+  .affected { padding: 28px 24px; }
+  .affected-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .problem .container { padding: 0 18px; }
+  .problem-grid { grid-template-columns: 1fr; }
+}

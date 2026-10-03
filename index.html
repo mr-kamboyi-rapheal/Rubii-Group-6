@@ -19,6 +19,8 @@
   <meta name="theme-color" content="#0B1B3F" />
   <link rel="icon" type="image/svg+xml" href="assets/logo.svg" />
 
+  <link rel="stylesheet" href="problem.css" />  <!-- Silungwe Lanzi, QRA-6 -->
+  <link rel="stylesheet" href="solution.css" />  <!-- Silungwe Lanzi, QRA-7 -->
 </head>
 <body>
 
@@ -30,7 +32,46 @@
        Notes  : Pure-CSS mobile menu (checkbox toggle). Link hrefs MUST
                 match the section ids below — check before renaming.
        ================================================================= -->
-  <header>
+  <header class="site-header">
+
+    <a href="#home" class="logo">
+        QR<span>Attend</span>
+    </a>
+
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="main-navigation" aria-label="Main navigation">
+
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#how-it-works">How It Works</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+
+</header>
     
   <main>
 
@@ -60,8 +101,59 @@
          Jira   : QRA-6   Branch: QRA-6-problem-section
          Covers : The school problem, who is affected, why it matters
          ================================================================= -->
-    <section>
-           
+    <section id="problem" class="section problem" aria-labelledby="problem-title">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">The problem</span>
+          <h2 id="problem-title">Manual attendance is slow, unreliable and easy to cheat.</h2>
+          <p>In most lectures, attendance is still taken with a paper sheet passed around the room or a name-by-name roll call. It costs time and produces records nobody can fully trust.</p>
+        </header>
+
+        <div class="problem-grid">
+          <article class="problem-card">
+            <div class="icon-badge icon-red" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+            </div>
+            <h3>Lost lecture time</h3>
+            <p>Roll calls and circulating sheets can take 10–15 minutes of every class, especially in large groups.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon-badge icon-red" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5"/></svg>
+            </div>
+            <h3>Proxy signing</h3>
+            <p>Students sign in for absent friends. Paper registers cannot tell who actually attended.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon-badge icon-red" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13l6 6M15 13l-6 6"/></svg>
+            </div>
+            <h3>Lost &amp; damaged records</h3>
+            <p>Sheets get misplaced, torn or become unreadable, leaving gaps when records are needed.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon-badge icon-red" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h4"/></svg>
+            </div>
+            <h3>Manual data entry</h3>
+            <p>Lecturers retype names into spreadsheets — slow, repetitive work that introduces errors.</p>
+          </article>
+        </div>
+
+        <div class="affected">
+          <h3>Who is affected?</h3>
+          <ul class="affected-list">
+            <li><strong>Students</strong> lose learning time and can be wrongly marked absent.</li>
+            <li><strong>Lecturers</strong> spend class time and admin hours managing registers.</li>
+            <li><strong>Administration</strong> works with incomplete data when checking eligibility and reporting.</li>
+          </ul>
+          <p class="why">
+            <strong>Why it needs to be addressed:</strong> attendance often decides exam eligibility.
+            Records that are inaccurate or missing can unfairly affect students and weaken
+            the institution's ability to monitor engagement.
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- =================================================================
@@ -70,8 +162,58 @@
          Jira   : QRA-7   Branch: QRA-7-solution-section
          Covers : System name, purpose, intended users, system flow
          ================================================================= -->
-    <section>
-      
+    <section id="solution" class="section solution" aria-labelledby="solution-title">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Our proposed system</span>
+          <h2 id="solution-title">Meet <span class="gradient-text">AttendQR</span></h2>
+          <p>A QR-based attendance management system that lets lecturers open a session in one tap and lets students check in from their own phones in seconds.</p>
+        </header>
+
+        <div class="solution-summary">
+          <div class="summary-item">
+            <h3>Purpose</h3>
+            <p>Capture accurate, verified attendance quickly and store it digitally so it can be trusted and reported on.</p>
+          </div>
+          <div class="summary-item">
+            <h3>Intended users</h3>
+            <p>Lecturers who run sessions, students who check in, and administrators who review attendance records.</p>
+          </div>
+          <div class="summary-item">
+            <h3>How it solves the problem</h3>
+            <p>Time-limited codes stop sharing, student verification stops proxy signing, and digital storage ends lost sheets.</p>
+          </div>
+        </div>
+
+        <h3 class="flow-title">How it works</h3>
+        <ol class="flow">
+          <li class="flow-step">
+            <span class="step-num">1</span>
+            <h4>Lecturer creates session</h4>
+            <p>Selects the course and opens a new attendance session.</p>
+          </li>
+          <li class="flow-step">
+            <span class="step-num">2</span>
+            <h4>QR code generated</h4>
+            <p>A unique, time-limited code is shown on screen.</p>
+          </li>
+          <li class="flow-step">
+            <span class="step-num">3</span>
+            <h4>Student scans</h4>
+            <p>Students scan the code with their phone camera.</p>
+          </li>
+          <li class="flow-step">
+            <span class="step-num">4</span>
+            <h4>Attendance submitted</h4>
+            <p>Identity is verified and the check-in is sent.</p>
+          </li>
+          <li class="flow-step">
+            <span class="step-num">5</span>
+            <h4>Record stored</h4>
+            <p>Saved with a timestamp, ready for reports.</p>
+          </li>
+        </ol>
+      </div>
     </section>
 
     <!-- =================================================================
@@ -80,8 +222,48 @@
          Jira   : QRA-8   Branch: QRA-8-features-section
          Notes  : Keep terminology consistent with the Solution section.
          ================================================================= -->
-    <section>
-      
+    <section id="features" class="section features">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Features</span>
+          <h2>Everything needed for faster, fairer attendance.</h2>
+          <p>AttendQR gives lecturers and students a simple way to run sessions, verify identities, and keep accurate records without the stress of paper registers.</p>
+        </header>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M9 9h6M9 12h6M9 15h3"/></svg>
+            </div>
+            <h3>Session creation</h3>
+            <p>Lecturers can start a class session quickly and assign the correct course or group in a few clicks.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M3 12h18"/><path d="M12 3v18"/><circle cx="12" cy="12" r="7"/></svg>
+            </div>
+            <h3>Live QR codes</h3>
+            <p>Each session generates a unique QR code that stays valid only for a set time window to reduce cheating.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 7h16v10H4z"/><path d="M7 11.5l3 3 7-7"/></svg>
+            </div>
+            <h3>Identity verification</h3>
+            <p>Student check-ins are matched to approved records so attendance reflects real participation rather than proxies.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 18V7a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v11"/><path d="M8 18v-5h8v5"/><path d="M9 10h6"/></svg>
+            </div>
+            <h3>Automated records</h3>
+            <p>Attendance is stored with timestamps and can be reviewed, exported, or reported without manual re-entry.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- =================================================================
@@ -89,8 +271,48 @@
          Owner  : Zimba Nathan (2510936)
          Jira   : QRA-9   Branch: QRA-9-benefits-section
          ================================================================= -->
-    <section>
-      
+    <section id="benefits" class="section benefits">
+      <div class="container">
+        <header class="section-head">
+          <span class="eyebrow">Benefits</span>
+          <h2>Why this system creates real value.</h2>
+          <p>AttendQR helps institutions move from paperwork to dependable digital attendance records while making the process faster and easier for everyone involved.</p>
+        </header>
+
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="8"/></svg>
+            </div>
+            <h3>Time-saving</h3>
+            <p>Students check in quickly, and lecturers spend less time managing attendance during class.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/><path d="M20 4v6h-6"/></svg>
+            </div>
+            <h3>Improved accuracy</h3>
+            <p>Verified digital records reduce mistakes, make reports consistent, and support fair decision-making.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 19h16"/><path d="M6 16V8"/><path d="M12 16V5"/><path d="M18 16v-7"/></svg>
+            </div>
+            <h3>Better reporting</h3>
+            <p>Administrative teams can review attendance data faster and identify trends without manual sorting.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="benefit-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 10V7a5 5 0 0 1 10 0v3"/><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M12 14v2"/></svg>
+            </div>
+            <h3>Security & trust</h3>
+            <p>Time-limited checks and verified logins reduce proxies and make records more credible.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
     <!-- =================================================================
@@ -103,7 +325,166 @@
                   once the group confirms who it is.
          ================================================================= -->
     <section>
-     
+     <section class="team">
+  <section class="team-grid">
+
+    <!-- ================= MEMBER 1 ================= -->
+    <article class="member-card">
+      <!-- Initials Avatar -->
+      <span class="avatar">MS</span>
+      
+      <!-- Member Name -->
+      <h3>Mwansa Saninga</h3>
+      
+      <!-- Student ID -->
+      <span class="member-id">ID: 2510963</span>
+      
+      <!-- Role / Title -->
+      <p class="member-role">Team Member Section</p>
+      
+      <!-- Description -->
+      <p class="member-desc">I worked on the Team Member Section of the AttendQR
+    QR-Based Attendance Management System,
+          creating the team member cards and adding GitHub profile links.
+        </p>
+      
+      <!-- GitHub Link -->
+      <a href="https://github.com/emmy-design615" class="gh-link" target="_blank">GitHub</a>
+    </article>
+
+    <!-- ================= MEMBER 2 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">NZ</span>
+      
+      <h3>Nathan Zimba</h3>
+      
+      <span class="member-id">ID: 2510936</span>
+      
+      <p class="member-role">Features & Benefits section</p>
+       
+      <p class="member-desc">
+            Communicate what the system can do and the practical value it provides to the students, lectures and management.
+       </p>
+      <a href="https://github.com/nathan5zimba-lgtm" class="gh-link" target="_blank">GitHub</a>
+    </article>
+
+    <!-- ================= MEMBER 3 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">CR</span>
+      
+      <h3>Chimbokaila Remmy</h3>
+      
+      <span class="member-id">ID: 2300084</span>
+      
+      <p class="member-role">Testing / QA + Frontend</p>
+      
+      <p class="member-desc">Identify and help fix defects before submission while maintaining a genuine frontend development contribution.</p>
+      
+      <a href="#" class="gh-link" target="_blank">GitHub</a>
+    </article>
+
+    <!-- ================= MEMBER 4 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">KR</span>
+      
+      <h3>Kamboyi Rapheal</h3>
+      
+      <span class="member-id">ID: 2510928</span>
+      
+      <p class="member-role">Team leader / project management + frontend</p>
+      
+      <p class="member-desc">Coordinate the project, keep the team aligned with the assignment requirements and contribute directly to the frontend.</p>
+      
+      <a href="https://github.com/mr-kamboyi-rephreal" class="gh-link" target="_blank">GitHub</a>
+    </article>
+
+    <!-- ================= MEMBER 5 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">WD</span>
+      
+      <h3>Wesley Daka</h3>
+      
+      <span class="member-id">ID: 2511586</span>
+      
+      <p class="member-role">Landing page - Hero/Home section</p>
+      
+      <p class="member-desc">Build the first section users see and establish the visual introduction to the QR attendance system.</p>
+      
+      <a href="https://github.com/wesley-daka" class="gh-link" target="_blank">GitHub</a>
+    </article>
+
+    <!-- ================= MEMBER 6 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">MB</span>
+      
+      <h3>Madaliso Banda</h3>
+      
+      <span class="member-id">ID: 2120992</span>
+      
+      <p class="member-role">Responsive design / mobile UI</p>
+      
+      <p class="member-desc">Ensure the complete website remains usable, readable and visually consistent across different screen sizes.</p>
+      
+      <a href="https://github.com/madalisoSB" class="gh-link" target="_blank">GitHub</a>
+    </article>
+      
+    <!-- ================= MEMBER 7 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">NN</span>
+      
+      <h3>Nathan Nansenga</h3>
+      
+      <span class="member-id">ID: 2510923</span>
+      
+      <p class="member-role">Visual asset / UI styling + frontend</p>
+      
+      <p class="member-desc">Support the visual identity of the site and improve consistency across the individual sections while contributing frontend code.</p>
+      
+      <a href="https://github.com/nathankapapa3-code" class="gh-link" target="_blank">GitHub</a>
+    </article>
+      
+    <!-- ================= MEMBER 8 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">LS</span>
+      
+      <h3>Lanzi Silungwe</h3>
+      
+      <span class="member-id">ID: 2511587</span>
+      
+      <p class="member-role">Problem + Proposed System sections / Frontend</p>
+      
+      <p class="member-desc">Explain why the project is needed and clearly demonstrate how the proposed QR attendance solution addresses the problem.</p>
+      
+      <a href="https://github.com/lanzisilungwe" class="gh-link" target="_blank">GitHub</a>
+    </article>
+      
+    <!-- ================= MEMBER 9 ================= -->
+    <article class="member-card">
+      
+      <span class="avatar">AK</span>
+      
+      <h3>Ackson Kamaloni</h3>
+      
+      <span class="member-id">ID: 2300780</span>
+      
+      <p class="member-role">Navigation - Contact - Footer</p>
+      
+      <p class="member-desc">Build the site's navigation and closing/contact elements so users can move through the landing page and access relevant contact information.</p>
+      
+      <a href="https://github.com/acksonkamaloni42-source" class="gh-link" target="_blank">GitHub</a>
+    </article>
+    
+        <!-- Duplicate the <article class="member-card">...</article> block 5 more times for all 10 members -->
+  </section>
+</section>
+
           
     </section>
 
@@ -114,9 +495,50 @@
          TODO   : Replace group6.attendqr@example.com with the team's
                   real email address (assignment: link must work).
          ================================================================= -->
-    <section>
-      
-    </section>
+    <section id="contact" class="contact-section">
+
+    <header class="section-heading">
+        <p>GET IN TOUCH</p>
+        <h2>Contact Us</h2>
+    </header>
+
+    <article class="contact-content">
+
+        <p>
+            Have questions about the QR Code-Based
+            Attendance Management System?
+            Contact the project team.
+        </p>
+
+        <address>
+
+            <p>
+                <strong>Project:</strong>
+                QR Code-Based Attendance Management System
+            </p>
+
+            <p>
+                <strong>Student:</strong>
+                Kamaloni Ackson
+            </p>
+
+            <p>
+                <strong>Student No.:</strong>
+                2300780
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="management4@gmail.com">
+                    management4@gmail.com
+                </a>
+            </p>
+
+        </address>
+
+    </article>
+
+</section>
 
   </main>
 
@@ -126,9 +548,71 @@
        Jira   : QRA-11  Branch: QRA-11-contact-footer
        TODO   : Replace GITHUB_ORG/REPO with the real repository path.
        ================================================================= -->
-  <footer>
-    
-  </footer>
+  <footer class="site-footer">
+
+    <section class="footer-content">
+
+        <article>
+
+            <h2>QR Attend</h2>
+
+            <p>
+                QR Code-Based Attendance Management System
+            </p>
+
+        </article>
+
+        <nav aria-label="Footer navigation">
+
+            <h2>Quick Links</h2>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#how-it-works">
+                        How It Works
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#features">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </section>
+
+    <section class="copyright">
+
+        <p>
+            &copy; 2026 QR Code-Based Attendance Management System.
+        </p>
+
+        <p>
+            Developed as part of the Software Engineering project.
+        </p>
+
+    </section>
+
+</footer>
 
 </body>
 </html>

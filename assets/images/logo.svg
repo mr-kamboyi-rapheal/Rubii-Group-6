@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 56" role="img" aria-label="ScanIn - QR attendance">
+  <rect x="2" y="2" width="52" height="52" rx="12" fill="#1E3A8A"/>
+  <g fill="none" stroke="#fff" stroke-width="3.4" stroke-linejoin="round">
+    <rect x="12" y="12" width="12" height="12" rx="1.5"/>
+    <rect x="32" y="12" width="12" height="12" rx="1.5"/>
+    <rect x="12" y="32" width="12" height="12" rx="1.5"/>
+  </g>
+  <path d="M33 40l5 5 9-11" fill="none" stroke="#14B8A6" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="66" y="29" font-family="Poppins, 'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#0F172A">ScanIn</text>
+  <text x="67" y="46" font-family="Inter, 'Segoe UI', Arial, sans-serif" font-size="11.5" font-weight="500" fill="#64748B">QR attendance for campus</text>
+</svg>
