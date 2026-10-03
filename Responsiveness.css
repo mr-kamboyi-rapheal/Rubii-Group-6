@@ -1,0 +1,573 @@
+/* ================================================================
+   ATTENDQR — GLOBAL RESPONSIVE LAYER
+   Shared responsive styling
+   ================================================================ */
+
+/* ---------- GLOBAL SAFETY ---------- */
+
+html {
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+section {
+    width: 100%;
+}
+
+
+/* ================================================================
+   HEADER / NAVIGATION
+   ================================================================ */
+
+.site-header {
+    min-height: 72px;
+    padding: 16px 7%;
+}
+
+.main-navigation ul {
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.menu-toggle {
+    display: none;
+    border: 0;
+    background: transparent;
+    color: #172033;
+    font-size: 28px;
+    line-height: 1;
+    padding: 6px;
+    cursor: pointer;
+}
+
+
+/* ================================================================
+   SHARED SECTION CONTAINERS
+   ================================================================ */
+
+.container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.section-head {
+    width: 100%;
+}
+
+.section-head h2 {
+    overflow-wrap: break-word;
+}
+
+
+/* ================================================================
+   ABOUT
+   ================================================================ */
+
+.about-card {
+    width: 100%;
+}
+
+.about-card p {
+    overflow-wrap: break-word;
+}
+
+
+/* ================================================================
+   SOLUTION
+   ================================================================ */
+
+.solution .container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.solution-summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.summary-item {
+    min-width: 0;
+}
+
+.flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding-left: 0;
+}
+
+.flow-step {
+    min-width: 0;
+}
+
+.flow-step h4,
+.flow-step p {
+    overflow-wrap: break-word;
+}
+
+
+/* ================================================================
+   FEATURES
+   ================================================================ */
+
+.features .container,
+.benefits .container {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.features-grid,
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.feature-card,
+.benefit-card {
+    min-width: 0;
+}
+
+.feature-card p,
+.benefit-card p {
+    overflow-wrap: break-word;
+}
+
+
+/* ================================================================
+   TEAM
+   ================================================================ */
+
+.team {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+    padding: 80px 0;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+}
+
+.member-card {
+    min-width: 0;
+    width: 100%;
+}
+
+.member-card h3,
+.member-desc,
+.member-role {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.member-desc {
+    line-height: 1.6;
+}
+
+.gh-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 8px 18px;
+}
+
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+
+.contact-section {
+    width: min(1160px, calc(100% - 48px));
+    margin-inline: auto;
+}
+
+.contact-content {
+    width: 100%;
+}
+
+.contact-content p,
+.contact-content address {
+    overflow-wrap: break-word;
+}
+
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+
+.site-footer {
+    width: 100%;
+}
+
+.footer-content {
+    width: min(1160px, 100%);
+    margin-inline: auto;
+}
+
+.footer-content ul {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* ================================================================
+   TABLETS
+   ================================================================ */
+
+@media (max-width: 1024px) {
+
+    .site-header {
+        padding-inline: 5%;
+    }
+
+    .about-card {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        padding: 42px;
+    }
+
+    .solution-summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flow {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .features-grid,
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-section {
+        width: min(900px, calc(100% - 48px));
+    }
+}
+
+
+/* ================================================================
+   SMALL TABLETS / LARGE PHONES
+   ================================================================ */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 14px 5%;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    /*
+       Mobile navigation.
+
+       IMPORTANT:
+       The current HTML uses a <button> for .menu-toggle but has
+       no checkbox/state mechanism. Therefore this CSS makes the
+       navigation mobile-friendly, but JavaScript is required to
+       actually open/close it.
+    */
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .main-navigation {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: #ffffff;
+        border-bottom: 1px solid #dce4ee;
+
+        display: none;
+        padding: 12px 5%;
+    }
+
+    .main-navigation.is-open {
+        display: block;
+    }
+
+    .main-navigation ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .main-navigation li {
+        width: 100%;
+    }
+
+    .main-navigation a {
+        display: block;
+        padding: 13px 4px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-card {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 36px;
+    }
+
+
+    /* ---------- SOLUTION ---------- */
+
+    .solution-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .flow {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* ---------- TEAM ---------- */
+
+    .team {
+        width: calc(100% - 48px);
+        padding: 68px 0;
+    }
+
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-section {
+        width: calc(100% - 48px);
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .site-footer {
+        padding: 42px 5% 20px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+
+/* ================================================================
+   PHONES
+   ================================================================ */
+
+@media (max-width: 600px) {
+
+    .container,
+    .solution .container,
+    .features .container,
+    .benefits .container {
+        width: calc(100% - 36px);
+    }
+
+
+    /* ---------- SECTION SPACING ---------- */
+
+    .section {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+
+
+    /* ---------- ABOUT ---------- */
+
+    .about-card {
+        padding: 28px 24px;
+        border-radius: 20px;
+    }
+
+    .about-card p {
+        font-size: 1rem;
+    }
+
+
+    /* ---------- SOLUTION ---------- */
+
+    .flow {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .flow-step {
+        padding: 20px;
+    }
+
+
+    /* ---------- FEATURES ---------- */
+
+    .features-grid,
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ---------- TEAM ---------- */
+
+    .team {
+        width: calc(100% - 36px);
+        padding: 60px 0;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .member-card {
+        padding: 24px 20px;
+    }
+
+
+    /* ---------- CONTACT ---------- */
+
+    .contact-section {
+        width: calc(100% - 36px);
+    }
+
+    .contact-content {
+        padding: 24px 20px;
+    }
+
+
+    /* ---------- FOOTER ---------- */
+
+    .site-footer {
+        padding: 38px 18px 18px;
+    }
+
+    .copyright {
+        font-size: 13px;
+    }
+}
+
+
+/* ================================================================
+   VERY SMALL PHONES
+   ================================================================ */
+
+@media (max-width: 400px) {
+
+    .site-header {
+        padding-inline: 18px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        font-size: 25px;
+    }
+
+    .problem {
+        padding: 56px 0;
+    }
+
+    .problem .container,
+    .container,
+    .solution .container,
+    .features .container,
+    .benefits .container {
+        width: calc(100% - 28px);
+    }
+
+    .about-card {
+        padding: 24px 20px;
+    }
+
+    .problem-card {
+        padding: 22px 20px;
+    }
+
+    .affected {
+        padding: 24px 20px;
+    }
+
+    .team {
+        width: calc(100% - 28px);
+    }
+
+    .member-card {
+        padding: 22px 18px;
+    }
+
+    .contact-section {
+        width: calc(100% - 28px);
+    }
+
+    .footer-content {
+        gap: 24px;
+    }
+}
+
+
+/* ================================================================
+   ACCESSIBILITY / TOUCH
+   ================================================================ */
+
+@media (hover: none) {
+
+    .problem-card:hover {
+        transform: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+}
