@@ -32,7 +32,46 @@
        Notes  : Pure-CSS mobile menu (checkbox toggle). Link hrefs MUST
                 match the section ids below — check before renaming.
        ================================================================= -->
-  <header>
+  <header class="site-header">
+
+    <a href="#home" class="logo">
+        QR<span>Attend</span>
+    </a>
+
+    <button class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false">
+        ☰
+    </button>
+
+    <nav class="main-navigation" aria-label="Main navigation">
+
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#how-it-works">How It Works</a>
+            </li>
+
+            <li>
+                <a href="#features">Features</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+
+    </nav>
+
+</header>
     
   <main>
 
@@ -456,9 +495,50 @@
          TODO   : Replace group6.attendqr@example.com with the team's
                   real email address (assignment: link must work).
          ================================================================= -->
-    <section>
-      
-    </section>
+    <section id="contact" class="contact-section">
+
+    <header class="section-heading">
+        <p>GET IN TOUCH</p>
+        <h2>Contact Us</h2>
+    </header>
+
+    <article class="contact-content">
+
+        <p>
+            Have questions about the QR Code-Based
+            Attendance Management System?
+            Contact the project team.
+        </p>
+
+        <address>
+
+            <p>
+                <strong>Project:</strong>
+                QR Code-Based Attendance Management System
+            </p>
+
+            <p>
+                <strong>Student:</strong>
+                Kamaloni Ackson
+            </p>
+
+            <p>
+                <strong>Student No.:</strong>
+                2300780
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <a href="management4@gmail.com">
+                    management4@gmail.com
+                </a>
+            </p>
+
+        </address>
+
+    </article>
+
+</section>
 
   </main>
 
@@ -468,9 +548,71 @@
        Jira   : QRA-11  Branch: QRA-11-contact-footer
        TODO   : Replace GITHUB_ORG/REPO with the real repository path.
        ================================================================= -->
-  <footer>
-    
-  </footer>
+  <footer class="site-footer">
+
+    <section class="footer-content">
+
+        <article>
+
+            <h2>QR Attend</h2>
+
+            <p>
+                QR Code-Based Attendance Management System
+            </p>
+
+        </article>
+
+        <nav aria-label="Footer navigation">
+
+            <h2>Quick Links</h2>
+
+            <ul>
+
+                <li>
+                    <a href="#home">Home</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#how-it-works">
+                        How It Works
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#features">
+                        Features
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </section>
+
+    <section class="copyright">
+
+        <p>
+            &copy; 2026 QR Code-Based Attendance Management System.
+        </p>
+
+        <p>
+            Developed as part of the Software Engineering project.
+        </p>
+
+    </section>
+
+</footer>
 
 </body>
 </html>
