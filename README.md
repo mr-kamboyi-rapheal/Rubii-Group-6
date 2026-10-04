@@ -22,31 +22,26 @@ A responsive landing page for **AttendQR**, our proposed QR-based attendance sys
 | Google Fonts | Plus Jakarta Sans (headings), Inter (body) |
 | Git + GitHub | Version control, branches, pull requests, code review |
 | Jira | Task tracking, linked to GitHub |
-
-No JavaScript is required — smooth scrolling and the mobile menu are pure CSS.
-
 ## Project structure
 
 ```
-attendqr-landing/
+Rubii-Group-6/
 ├── index.html            # All sections (each marked with its owner)
 ├── assets/
-│   ├── logo.svg          # Logo + favicon            (Nathan Nansenga)
-│   └── hero-phone.svg    # Hero illustration         (Nathan Nansenga)
+│   ├── logo.svg          # Logo + favicon      (Nathan Nansenga)
+│   └── hero-phone.svg    # Hero illustration   (Nathan Nansenga)
 ├── css/                  # ONE FILE PER OWNER → fewer merge conflicts
-│   ├── base.css          # Design system             (Nathan Nansenga)
-│   ├── navigation.css    # Header / nav              (Kamaloni Ackson)
-│   ├── hero.css          # Hero                      (Daka Wesley)
-│   ├── about.css         # Team identity             (Kamboyi Rapheal)
-│   ├── problem-solution.css# Problem + Solution      (Silungwe Lanzi)
-│   ├── features-benefits.css # Features + Benefits   (Zimba Nathan)
-│   ├── team.css          # Team members              (Saninga Mwansa)
-│   ├── contact-footer.css# Contact + footer          (Kamaloni Ackson)
+│   ├── base.css          # Design system       (Nathan Nansenga)
+│   ├── navigation.css    # Header / nav        (Kamaloni Ackson)
+│   ├── hero.css          # Hero                (Daka Wesley)
+│   ├── about.css         # Team identity       (Kamboyi Rapheal)
+│   ├── problem-solution.css# Problem + Solutio (Silungwe Lanzi)
+│   ├── features-benefits.css # Features+Benefits(Zimba Nathan)
+│   ├── team.css          # Team members         (Saninga Mwansa)
+│   ├── contact-footer.css# Contact + footer     (Kamaloni Ackson)
 │   ├── accessibility.css # Focus, skip link, QA fixes(Chimbokaila Remmy)
 │   └── responsive.css    # All breakpoints — loads LAST (Banda Madalitso)
 └── docs/
-    ├── CONTRIBUTING.md         # Git/Jira workflow rules
-    ├── TESTING_CHECKLIST.md    # QA checklist
     └── CONTRIBUTION_TABLE.md   # Submission table (fill in)
 ```
 
