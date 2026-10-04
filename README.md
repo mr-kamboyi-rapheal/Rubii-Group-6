@@ -10,7 +10,7 @@ A responsive landing page for **AttendQR**, our proposed QR-based attendance sys
 
 ## Live link
 
-🔗 **https://YOUR-LIVE-URL** ← _TODO (Kamboyi): replace after deployment (GitHub Pages / Netlify / Vercel)_
+🔗 **https://mr-kamboyi-rapheal.github.io/Rubii-Group-6/** ← 
 
 ## Technologies
 
@@ -82,7 +82,4 @@ Jira project key used below is **QRA**
 | Chimbokaila Remmy | 2300084 | Testing / QA + Frontend | Accessibility + fixes — `accessibility.css`, test checklist | QRA-13 | `QRA-13-qa-accessibility` |
 | _10th member — TBC_ | | | | | |
 
-## Suggested merge order
 
-`QRA-1` → `QRA-2` → `QRA-3` → `QRA-4` … `QRA-11` → `QRA-12` (responsive) → `QRA-13` (QA regression).
-Base and skeleton go first because every other section depends on them.
