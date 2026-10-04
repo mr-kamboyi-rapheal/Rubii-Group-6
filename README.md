@@ -79,7 +79,7 @@ Jira project key used below is **QRA**
 | Kamaloni Ackson | 2300780 | Navigation / Contact / Footer | Header, mobile menu, contact, footer — `navigation.css`, `contact-footer.css` | QRA-3, QRA-11 | `QRA-3-navigation`, `QRA-11-contact-footer` |
 | Banda Madalitso | 2120992 | Responsive / Mobile UI | All breakpoints — `responsive.css` | QRA-12 | `QRA-12-responsive-design` |
 | Nathan Nansenga | 2510923 | Visual Assets / UI Styling | Design system + SVGs — `base.css`, `assets/` | QRA-2 | `QRA-2-design-system` |
-| Chimbokaila Remmy | 2300084 | Testing / QA + Frontend | Accessibility + fixes — `accessibility.css`, test checklist | QRA-13 | `QRA-13-qa-accessibility` |
+| Chimbokaila Remmy | 2300084 | Testing / QRA + Frontend | Accessibility + fixes — `accessibility.css`, test checklist | QRA-13 | `QRA-13-qa-accessibility` |
 | _10th member — TBC_ | | | | | |
 
 
